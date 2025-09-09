@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Complex Registration Form</title>
+    <style>
+        table {
+            width: 600px;
+            border-collapse: collapse;
+            margin: 20px auto;
+        }
+
+        td,
+        th {
+            padding: 8px;
+            border: 1px solid #000;
+        }
+
+        fieldset {
+            border: 2px solid #333;
+            margin-bottom: 20px;
+        }
+
+        legend {
+            font-weight: bold;
+            padding: 5px 10px;
+        }
+
+        iframe {
+            width: 600px;
+            height: 200px;
+            border: 1px solid #000;
+            margin: 20px auto;
+            display: block;
+        }
+
+        .form-buttons {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body bgcolor="lavender">
+    <h1 text-align="center">
+        <center>Complex Registration Form</center>
+    </h1>
+    <form action="#" method="post">
+
+        <fieldset>
+            <legend>Personal Details</legend>
+            <table>
+                <tr>
+                    <td>First Name: *</td>
+                    <td><input type="text" name="first_name" required></td>
+                </tr>
+                <tr>
+                    <td>Last Name: *</td>
+                    <td><input type="text" name="last_name" required></td>
+                </tr>
+                <tr>
+                    <td>Email: *</td>
+                    <td><input type="email" name="email" required></td>
+                </tr>
+                <tr>
+                    <td>Phone Number:</td>
+                    <td><input type="tel" name="phone" pattern="\d{10}" title="Enter 10 digit phone number"></td>
+                </tr>
+            </table>
+        </fieldset>
+
+        <fieldset>
+            <legend>Account Details</legend>
+            <table>
+                <tr>
+                    <td>Username: *</td>
+                    <td><input type="text" name="username" required pattern="[A-Za-z0-9]{5,15}"
+                            title="5-15 alphanumeric characters"></td>
+                </tr>
+                <tr>
+                    <td>Password: *</td>
+                    <td><input type="password" name="password" required
+                            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W_]).{8,}"
+                            title="Minimum 8 characters with uppercase, lowercase, number, and special character"></td>
+                </tr>
+                <tr>
+                    <td>Confirm Password: *</td>
+                    <td><input type="password" name="confirm_password" required></td>
+                </tr>
+            </table>
+        </fieldset>
+
+        <fieldset>
+            <legend>Address</legend>
+            <table>
+                <tr>
+                    <td>Address Line 1: *</td>
+                    <td><input type="text" name="address1" required></td>
+                </tr>
+                <tr>
+                    <td>Address Line 2:</td>
+                    <td><input type="text" name="address2"></td>
+                </tr>
+                <tr>
+                    <td>City: *</td>
+                    <td><input type="text" name="city" required></td>
+                </tr>
+                <tr>
+                    <td>State: *</td>
+                    <td>
+                        <select name="state" required>
+                            <option value="">--Select State--</option>
+                            <option value="AR">Arunachal Pradesh</option>
+                            <option value="AS">Assam</option>
+                            <option value="AP">Andhra Pradesh</option>
+                            <option value="BR">Bihar</option>
+                            <option value="CG">Chhattisgarh</option>
+                            <option value="GA">Goa</option>
+                            <option value="GJ">Gujarat</option>
+                            <option value="HR">Haryana</option>
+                            <option value="HP">Himachal Pradesh</option>
+                            <option value="JH">Jharkhand</option>
+                            <option value="KA">Karnataka</option>
+                            <option value="KL">Kerala</option>
+                            <option value="MP">Madhya Pradesh</option>
+                            <option value="MH">Maharashtra</option>
+                            <option value="MN">Manipur</option>
+                            <option value="ML">Meghalaya</option>
+                            <option value="MZ">Mizoram</option>
+                            <option value="NL">Nagaland</option>
+                            <option value="OR">Odisha</option>
+                            <option value="PB">Punjab</option>
+                            <option value="RJ">Rajasthan</option>
+                            <option value="SK">Sikkim</option>
+                            <option value="TN">Tamil Nadu</option>
+                            <option value="TG">Telangana</option>
+                            <option value="TR">Tripura</option>
+                            <option value="UP">Uttar Pradesh</option>
+                            <option value="UT">Uttarakhand</option>
+                            <option value="WB">West Bengal</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>ZIP Code: *</td>
+                    <td><input type="text" name="zip" required pattern="\d{5}" title="5-digit ZIP Code"></td>
+                </tr>
+            </table>
+        </fieldset>
+
+        <fieldset>
+            <legend>Preferences</legend>
+            <table>
+                <tr>
+                    <td>Gender: *</td>
+                    <td>
+                        <input type="radio" name="gender" value="male" required> Male
+                        <input type="radio" name="gender" value="female" required> Female
+                        <input type="radio" name="gender" value="other" required> Other
+                    </td>
+                </tr>
+                <tr>
+                    <td>Subscribe Newsletter:</td>
+                    <td><input type="checkbox" name="subscribe"></td>
+                </tr>
+                <tr>
+                    <td>Short Bio:</td>
+                    <td><textarea name="bio" maxlength="200" placeholder="Tell us about yourself..." rows="4"
+                            cols="30"></textarea></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="checkbox" name="terms" required> I agree to the Terms and Conditions *
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+
+        <div class="form-buttons">
+            <input type="submit" value="Register">
+            <input type="reset" value="Reset">
+        </div>
+        <h2>
+            <center>Terms and Conditions</center>
+        </h2>
+        <iframe srcdoc="
+      <h3>Terms and Conditions</h3>
+      <p>Welcome to our registration portal. By registering, you agree to the following terms and conditions:</p>
+     <ul>
+       <li>You must provide accurate and complete information.</li>
+       <li>Your password must be kept confidential.</li>
+       <li>We reserve the right to cancel accounts that violate our policies.</li>
+       <li>All data is processed according to our privacy policy.</li>
+       <li>Use the form responsibly.</li>
+     </ul>
+   "></iframe>
+
+    </form>
+
+</body>
+
+</html>
